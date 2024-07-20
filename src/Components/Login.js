@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call login function with both username and password
+    
     login(username, password);
     if (localStorage.getItem('user')) {
       navigate('/');
