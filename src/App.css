@@ -1,70 +1,174 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    font-family: Papyrus;
-}
-nav{
-    background-color: blue;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-.container{
-    background-color: rgb(253, 209, 216);
-    margin: auto;
-    width: 80%;
-    min-height: 100vh;
-    padding: 4vmax 8vmax ;
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-.container > h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  nav {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
     text-align: center;
-    margin: 30px;
-}
-.container > form{
+    border-bottom: 2px solid #0056b3;
+  }
+  
+  nav h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  nav button, nav a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  nav button:hover, nav a:hover {
+    color: #e3e3e3;
+  }
+  
+  .container {
+    background-color: white;
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  .container > h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .container > form {
     display: flex;
     flex-direction: column;
-}
-input,textarea,button{
-   padding: 10px;
-   border: 5px solid rgb(152, 141, 141);
-   border-radius: 5px; 
-   margin: 10px;
-   font-size: 1.2rem;
-}
-.container button{
-    background-color: black;
+    gap: 1rem;
+  }
+  
+  input, textarea, button {
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+  }
+  
+  button {
+    background-color: #007bff;
     color: white;
-}
- .container button:hover{
-    background-color: rgba(0, 0, 255, 0.886);
-    text-decoration:overline;
-}
-.task {
-    display: flex;
-    background-color: azure;
-    margin: 18px 0;
-    align-items: center;
-    padding: 20px;
-    border-radius: 5px;
-}
-.task > div{
-    width: 100%;
-}
-.task button{
     border: none;
-    border-radius: 100%;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 0, 0, 0.717);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Task Styles */
+  .task {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-size: 1.7rem;
-}
-.task button:hover{
-    background-color: red;
-}
-.task > div span{
-    color: rgba(0, 0, 0, 0.573);
-}
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    max-width: 600px;
+  }
+  
+  .task.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+    color: #6c757d;
+  }
+  
+  .task > div {
+    flex: 1;
+  }
+  
+  .task p {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .task span {
+    display: block;
+    margin-top: 5px;
+    color: #555;
+  }
+  
+  .task button {
+    border: none;
+    background-color:red;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-inline: 5px;
+    /* font-size: 0.875rem; */
+  }
+  
+  .task button:hover {
+    background-color: #0056b3;
+  }
+  
+  .task.editing input,
+  .task.editing textarea {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+  
+  .task.editing button {
+    background-color: #28a745;
+  }
+  
+  .task.editing button:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 1rem;
+    }
+  
+    nav {
+      padding: 10px 20px;
+    }
+  
+    .task {
+      flex-direction: column;
+    }
+  
+    .edit-page {
+      width: 95%;
+      padding: 1rem;
+    }
+  }
+  

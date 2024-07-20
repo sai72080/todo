@@ -1,10 +1,20 @@
+import React, { useContext } from 'react';
+import { AuthContext } from '../AuthContext';
+import { Link } from 'react-router-dom';
 
-function Header() {
-  // const headerStyle = {
-  //   border:"1px solid black"
-  // };
-    return (
-      <nav><h1>Get ready to complete your daily goals</h1></nav>
-    );
-  }
+const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+
+  return (
+    <nav>
+      <h1>Todo App</h1>
+      {user ? (
+        <button onClick={logout}>Logout</button>
+      ) : (
+        <Link to="/login">Login</Link>
+      )}
+    </nav>
+  );
+};
+
 export default Header;
