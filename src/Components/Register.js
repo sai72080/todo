@@ -1,4 +1,3 @@
-// Register.js
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../AuthContext';
 import { useNavigate } from 'react-router-dom';
